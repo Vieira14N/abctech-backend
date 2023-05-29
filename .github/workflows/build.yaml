@@ -18,5 +18,5 @@ jobs:
       with:
         username: codeoncloud
         password: dckr_pat_GHtDvc3Qzqac_thOwnIAA7NhZLo
-        repository: codeoncloud/abctech-backend
+        repository: codeoncloud/abctech-frontend
         tags: ${{ github.sha }}, latest
