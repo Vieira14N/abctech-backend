@@ -1,0 +1,22 @@
+name: CI GitOps
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build and push to DockerHub
+      uses: docker/build-push-action@v1.1.0
+      with:
+        username: codeoncloud
+        password: dckr_pat_GHtDvc3Qzqac_thOwnIAA7NhZLo
+        repository: codeoncloud/abctech-backend
+        tags: ${{ github.sha }}, latest
